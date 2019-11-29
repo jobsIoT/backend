@@ -19,7 +19,7 @@ class User(OutputMixin, db.Model):
 
 
 class Cardiaque(OutputMixin, db.Model):
-    __tablename__ = 'meeting'
+    __tablename__ = 'cardiaque'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(), nullable=False)
     rythme = db.Column(db.Integer, primary_key=True)
