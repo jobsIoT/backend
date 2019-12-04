@@ -14,7 +14,7 @@ parser.add_argument('password', type=str, required=True, help='password of ther 
 class Inscription(Resource):
     def post(self):
         args = parser.parse_args(strict=True)
-        new_user = User(name=args['firstname'], lastname=args['lastname'], email=args['email'],
+        new_user = User(firstname=args['firstname'], lastname=args['lastname'], email=args['email'],
                         password=args['password'])
         id_ = User.query.filter_by(email=args['email']).first()
         if id_ is not None:
