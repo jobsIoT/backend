@@ -21,7 +21,7 @@ class Modify_user(Resource):
                 status=400, mimetype='application/json')
 
         if args['firstname'] is not None :
-            id_user.name = args['firstname']
+            id_user.firstname = args['firstname']
         if args['lastname'] is not None :
             id_user.lastname = args['lastname']
         if args['password'] is not None :
