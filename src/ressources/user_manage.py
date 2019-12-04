@@ -4,13 +4,13 @@ import json
 from src.models import User
 
 parser = reqparse.RequestParser()
-parser.add_argument('mail', type=str, required=True, help='mail of the user you want the information')
+parser.add_argument('email', type=str, required=True, help='mail of the user you want the information')
 
 
 class User_manage(Resource):
     def post(self):
         args = parser.parse_args(strict=True)
-        id_user = User.query.filter_by(email=args['mail']).first()
+        id_user = User.query.filter_by(email=args['email']).first()
 
         if id_user is None:
             return Response(

@@ -6,7 +6,7 @@ from src.db import db
 
 parser = reqparse.RequestParser()
 parser.add_argument('pulls', type=str, required=True, help='the cardiac pull of the user')
-parser.add_argument('mail', type=str, required=True, help='the mail of the user')
+parser.add_argument('email', type=str, required=True, help='the mail of the user')
 
 class Send_pulls(Resource):
     def post(self):
@@ -16,7 +16,7 @@ class Send_pulls(Resource):
 
         db.session.add(new_card)
         db.session.commit()
-        id_ = Cardiaque.query.filter_by(email=args['mail']).first()
+        id_ = Cardiaque.query.filter_by(email=args['email']).first()
         return Response(
             response=id_.to_json(),
             status=200, mimetype='application/json')

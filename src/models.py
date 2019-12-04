@@ -13,8 +13,8 @@ class User(OutputMixin, db.Model):
     password = db.Column(db.String, nullable=False)
 
     def __repr__(self):
-        return "<Book(firstname='{}', lastname='{}', email='{}', password='{}')>" \
-            .format(self.firstname, self.lastname, self.email, self.password)
+        return "<Book( email='{}', firstname='{}', lastname='{}', password='{}')>" \
+            .format(self.email, self.firstname, self.lastname, self.password)
 
 
 class Cardiaque(OutputMixin, db.Model):

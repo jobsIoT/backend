@@ -5,7 +5,7 @@ from src.models import User
 
 parser = reqparse.RequestParser()
 parser.add_argument('email', type=str, required=True, help='mail of the user')
-parser.add_argument('password', type=str, required=True, help='password of ther user')
+parser.add_argument('password', type=str, required=True, help='password of the user')
 
 
 class Connexion(Resource):

@@ -16,7 +16,7 @@ class Inscription(Resource):
         args = parser.parse_args(strict=True)
         new_user = User(name=args['firstname'], lastname=args['lastname'], email=args['email'],
                         password=args['password'])
-        id_ = User.query.filter_by(email=args['mail']).first()
+        id_ = User.query.filter_by(email=args['email']).first()
         if id_ is not None:
             return Response(
                 response=json.dumps(dict(error='user exist already')),
