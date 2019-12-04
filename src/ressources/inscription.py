@@ -6,7 +6,7 @@ from src.models import User
 
 parser = reqparse.RequestParser()
 parser.add_argument('email', type=str, required=True, help='mail of the user')
-parser.add_argument('firstname', type=str, required=True, help='Name of the user')
+parser.add_argument('firstname', type=str, required=True, help='Error : Name of the user')
 parser.add_argument('lastname', type=str, required=True, help='surname of the user')
 parser.add_argument('password', type=str, required=True, help='password of ther user')
 
