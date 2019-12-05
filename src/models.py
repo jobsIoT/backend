@@ -11,11 +11,11 @@ class User(OutputMixin, db.Model):
     firstname = db.Column(db.String, nullable=False)
     lastname = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
-    isPremium = db.Column(db.Boolean, nullable=False)
+    ispremium = db.Column(db.Boolean, nullable=False)
 
     def __repr__(self):
-        return "<Book( email='{}', firstname='{}', lastname='{}', password='{}', isPremium='{}')>" \
-            .format(self.email, self.firstname, self.lastname, self.password, self.isPremium)
+        return "<Book( email='{}', firstname='{}', lastname='{}', password='{}', ispremium='{}')>" \
+            .format(self.email, self.firstname, self.lastname, self.password, self.ispremium)
 
 
 class Cardiaque(OutputMixin, db.Model):
