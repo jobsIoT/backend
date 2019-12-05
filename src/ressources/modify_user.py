@@ -10,7 +10,7 @@ parser.add_argument('lastname', type=str, required=False, help='surname of the u
 parser.add_argument('email', type=str, required=False, help='mail of the user')
 parser.add_argument('password', type=str, required=False, help='password of ther user')
 parser.add_argument('ispremium', type=bool, required=True, help='is a premium user')
-parser.add_argument('serialnumber', type=bool, required=True, help='is a premium user')
+parser.add_argument('serialnumber', type=str, required=True, help='is a premium user')
 
 
 class Modify_user(Resource):
