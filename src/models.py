@@ -11,7 +11,7 @@ class User(OutputMixin, db.Model):
     firstname = db.Column(db.String, nullable=False)
     lastname = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
-    ispremium = db.Column(db.boolean, nullable=False)
+    ispremium = db.Column(db.Boolean, nullable=False)
 
     def __repr__(self):
         return "<Book( email='{}', firstname='{}', lastname='{}', password='{}')>" \
