@@ -10,13 +10,14 @@ parser.add_argument('firstname', type=str, required=True, help='Error : Name of 
 parser.add_argument('lastname', type=str, required=True, help='surname of the user')
 parser.add_argument('password', type=str, required=True, help='password of ther user')
 parser.add_argument('ispremium', type=bool, required=True, help='is a premium user')
+parser.add_argument('serialnumber', type=bool, required=True, help='is a premium user')
 
 
 class Inscription(Resource):
     def post(self):
         args = parser.parse_args(strict=True)
         new_user = User(firstname=args['firstname'], lastname=args['lastname'], email=args['email'],
-                        password=args['password'], ispremium=args['ispremium'])
+                        password=args['password'], ispremium=args['ispremium'], serialnumber=args['serialnumber'])
         id_ = User.query.filter_by(email=args['email']).first()
         if id_ is not None:
             return Response(

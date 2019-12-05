@@ -9,6 +9,8 @@ parser.add_argument('firstname', type=str, required=False, help='Name of the use
 parser.add_argument('lastname', type=str, required=False, help='surname of the user')
 parser.add_argument('email', type=str, required=False, help='mail of the user')
 parser.add_argument('password', type=str, required=False, help='password of ther user')
+parser.add_argument('ispremium', type=bool, required=True, help='is a premium user')
+parser.add_argument('serialnumber', type=bool, required=True, help='is a premium user')
 
 
 class Modify_user(Resource):
@@ -26,7 +28,10 @@ class Modify_user(Resource):
             id_user.lastname = args['lastname']
         if args['password'] is not None :
             id_user.password = args['password']
-
+        if args['ispremium'] is not None :
+            id_user.ispremium = args['ispremium']
+        if args['serialnumber'] is not None:
+            id_user.serialnumber = args['serialnumber']
         db.session.commit()
 
         return Response(
