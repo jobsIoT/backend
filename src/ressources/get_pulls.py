@@ -10,12 +10,12 @@ parser.add_argument('email', type=str, required=True, help='mail of the user you
 class getPulls(Resource):
     def post(self):
         args = parser.parse_args(strict=True)
-        pulls = Cardiaque.query.filter_by(email=args['email'])
+        pulls = Cardiaque.query.filter_by(email=args['email']).first()
 
         if pulls is None:
             return Response(
                 response=json.dumps(dict(error='User doesn\'t exist')),
                 status=400, mimetype='application/json')
         return Response(
-            response=pulls,
+            response=pulls.to_json(),
             status=200, mimetype='application/json')
