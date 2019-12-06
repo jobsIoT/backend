@@ -10,7 +10,7 @@ parser.add_argument('email', type=str, required=True, help='mail of the user you
 class getPulls(Resource):
     def post(self):
         args = parser.parse_args(strict=True)
-        pulls = Cardiaque.query.filter_by(email=args['email']).first()
+        pulls = Cardiaque.query.filter_by(email=args['email']).all()
 
         if pulls is None:
             return Response(
