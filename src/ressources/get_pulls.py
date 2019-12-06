@@ -16,7 +16,7 @@ class getPulls(Resource):
             return Response(
                 response=json.dumps(dict(error='User doesn\'t exist')),
                 status=400, mimetype='application/json')
-        tmp = [{'id': elt.id, 'email': elt.email, 'rythme': elt.rythme, 'date': elt.date} for elt in pulls]
+        tmp = [{'id': elt.id, 'email': elt.email, 'rythme': elt.rythme, 'date': str(elt.date)} for elt in pulls]
         return Response(
             response=json.dumps(tmp),
             status=200, mimetype='application/json')
