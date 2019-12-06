@@ -18,5 +18,5 @@ class getPulls(Resource):
                 status=400, mimetype='application/json')
         tmp = {i: pulls[i] for i in range(0, len(pulls))}
         return Response(
-            response=tmp.to_json(),
+            response=json.dumps(tmp),
             status=200, mimetype='application/json')
