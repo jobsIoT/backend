@@ -18,7 +18,7 @@ class getPulls(Resource):
                 status=400, mimetype='application/json')
         tmp = []
         for elt in pulls:
-            tmp.push(elt)
+            tmp.append(elt)
         return Response(
             response=tmp.to_json(),
             status=200, mimetype='application/json')
