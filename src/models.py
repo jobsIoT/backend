@@ -36,10 +36,10 @@ class Journeys(OutputMixin, db.Model):
     email = db.Column(db.String(), nullable=False)
     time = db.Column(db.Integer, primary_key=False)
     date = db.Column(db.Text, nullable=False)
-    sleepingTime = db.Column(db.Integer, primary_key=False)
+    sleepingtime = db.Column(db.Integer, primary_key=False)
     alarm = db.Column(db.Integer, primary_key=False)
     destination = db.Column(db.Text, nullable=False)
     #voyage enregistré
     def __repr__(self):
-        return "{{'id' : '{}', 'email' : '{}', 'time' : '{}', 'date' : '{}', 'sleepingTime' : '{}', 'alarm' : '{}', 'destination' : '{}'}}" \
-            .format(self.id, self.email, self.time, self.date, self.sleepingTime, self.alarm, self.destination)
+        return "{{'id' : '{}', 'email' : '{}', 'time' : '{}', 'date' : '{}', 'sleepingtime' : '{}', 'alarm' : '{}', 'destination' : '{}'}}" \
+            .format(self.id, self.email, self.time, self.date, self.sleepingtime, self.alarm, self.destination)
