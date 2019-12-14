@@ -16,7 +16,7 @@ class getJourneys(Resource):
             return Response(
                 response=json.dumps(dict(error='User doesn\'t exist')),
                 status=400, mimetype='application/json')
-        tmp = [{'id': elt.id, 'email': elt.email, 'time': elt.time, 'date': str(elt.date), 'sleepingTime': elt.sleepingTime, 'alarm': elt.alarm, 'destination': elt.destination} for elt in journeys]
+        tmp = [{'id': elt.id, 'email': elt.email, 'time': elt.time, 'date': str(elt.date), 'sleepingtime': elt.sleepingTime, 'alarm': elt.alarm, 'destination': elt.destination} for elt in journeys]
         return Response(
             response=json.dumps(tmp),
             status=200, mimetype='application/json')
