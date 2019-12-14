@@ -23,9 +23,23 @@ class Cardiaque(OutputMixin, db.Model):
     __tablename__ = 'cardiaque'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(), nullable=False)
-    rythme = db.Column(db.Integer, primary_key=True)
+    rythme = db.Column(db.Integer, primary_key=False)
     date = db.Column(db.Text, nullable=True)
     #rythme cardiaque enregistré
     def __repr__(self):
         return "{{'id' : '{}', 'email' : '{}', 'rythme' : '{}', 'date' : '{}'}}" \
             .format(self.id, self.email, self.rythme, self.date)
+
+class Journeys(OutputMixin, db.Model):
+    __tablename__ = 'journeys'
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(), nullable=False)
+    time = db.Column(db.Integer, primary_key=False)
+    date = db.Column(db.Text, nullable=False)
+    sleepingTime = db.Column(db.Integer, primary_key=False)
+    alarm = db.Column(db.Integer, primary_key=False)
+    destination = db.Column(db.Text, nullable=False)
+    #voyage enregistré
+    def __repr__(self):
+        return "{{'id' : '{}', 'email' : '{}', 'time' : '{}', 'date' : '{}', 'sleepingTime' : '{}', 'alarm' : '{}', 'destination' : '{}'}}" \
+            .format(self.id, self.email, self.time, self.date, self.sleepingTime, self.alarm, self.destination)
