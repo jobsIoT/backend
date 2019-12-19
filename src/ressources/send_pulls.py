@@ -12,7 +12,8 @@ class Send_pulls(Resource):
     def post(self):
 
         args = parser.parse_args(strict=True)
-        new_card = Cardiaque(email=args['email'], rythme=args['pulls'], date=datetime.datetime.today().strftime('%Y-%m-%d'))
+        datee = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+        new_card = Cardiaque(email=args['email'], rythme=args['pulls'], date=datee)
 
         db.session.add(new_card)
         db.session.commit()
