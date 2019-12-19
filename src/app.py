@@ -16,6 +16,7 @@ api.add_resource(Modify_user, '/modify_user')
 api.add_resource(Send_pulls, '/send_pulls')
 api.add_resource(getPulls, '/get_pulls')
 api.add_resource(getJourneys, '/get_journeys')
+api.add_resource(getJourneys, '/get_journey')
 api.add_resource(Home, '/')
 
 if __name__ == '__main__':
