@@ -12,7 +12,7 @@ class Send_pulls(Resource):
     def post(self):
 
         args = parser.parse_args(strict=True)
-        datee = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+        #datee = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
         new_card = Cardiaque(email=args['email'], rythme=args['pulls'], date=str(datetime.datetime.today()).split('.')[0])
 
         db.session.add(new_card)
