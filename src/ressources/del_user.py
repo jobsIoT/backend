@@ -15,5 +15,5 @@ class delUser(Resource):
         db.session.commit()
 
         return Response(
-            response=id_user.to_json(),
+            response=id_user,
             status=200, mimetype='application/json')
