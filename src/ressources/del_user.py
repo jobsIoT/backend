@@ -7,7 +7,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('email', type=str, required=False, help='mail of the user')
 
 
-class del_user(Resource):
+class delUser(Resource):
     def post(self):
         args = parser.parse_args(strict=True)
         id_user = User.query.filter_by(email=args['email']).delete()
