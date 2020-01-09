@@ -17,7 +17,8 @@ class Inscription(Resource):
     def post(self):
         args = parser.parse_args(strict=True)
         new_user = User(firstname=args['firstname'], lastname=args['lastname'], email=args['email'],
-                        password=args['password'], ispremium=args['ispremium'], serialnumber=args['serialnumber'])
+                        password=args['password'], ispremium=args['ispremium'], serialnumber=args['serialnumber'],
+                        isadmin='false')
         id_ = User.query.filter_by(email=args['email']).first()
         if id_ is not None:
             return Response(

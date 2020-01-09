@@ -13,10 +13,11 @@ class User(OutputMixin, db.Model):
     password = db.Column(db.String, nullable=False)
     ispremium = db.Column(db.Boolean, nullable=False)
     serialnumber = db.Column(db.String, nullable=False)
+    isadmin = db.Column(db.Boolean, nullable=False)
 
     def __repr__(self):
-        return "<Book( email='{}', firstname='{}', lastname='{}', password='{}', ispremium='{}', serialnumber='{}')>" \
-            .format(self.email, self.firstname, self.lastname, self.password, self.ispremium, self.serialnumber)
+        return "<Book( email='{}', firstname='{}', lastname='{}', password='{}', ispremium='{}', serialnumber='{}', isadmin='{}')>" \
+            .format(self.email, self.firstname, self.lastname, self.password, self.ispremium, self.serialnumber, self.isadmin)
 
 
 class Cardiaque(OutputMixin, db.Model):
