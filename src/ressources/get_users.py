@@ -7,6 +7,7 @@ from src.models import User
 class getUsers(Resource):
     def post(self):
         id_ = User.query.all()
+        print(id_)
         if id_ is None:
             return Response(
                 response=json.dumps(dict(error='User doesn\'t exist')),
