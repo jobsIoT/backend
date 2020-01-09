@@ -12,5 +12,5 @@ class getUsers(Resource):
                 response=json.dumps(dict(error='User doesn\'t exist')),
                 status=400, mimetype='application/json')
         return Response(
-                response=id_.to_json(),
+                response=id_,
                 status=200, mimetype='application/json')
