@@ -8,7 +8,7 @@ from src.ressources.send_pulls import Send_pulls
 from src.ressources.get_pulls import getPulls
 from src.ressources.get_journeys import getJourneys
 from src.ressources.home import Home
-from src.ressources.getUsers import getUsers
+from src.ressources.get_users import getUsers
 
 api.add_resource(Inscription, '/inscription')
 api.add_resource(Connexion, '/connexion')
